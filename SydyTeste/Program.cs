@@ -1,8 +1,11 @@
 using SydyTeste.Data.DB;
+using SydyTeste.Data.Models.Helpers;
 using SydyTeste.Data.Services;
 using SydyTeste.Data.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<SqlConnectSettings>(builder.Configuration.GetSection("SqlConnectSettings"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
